@@ -1,0 +1,48 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.concurrent.TimeUnit;
+
+public class Flight {
+
+public static void main(String[] args) throws InterruptedException {
+// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver","E://aqh//chromedriver.exe");
+WebDriver driver = (WebDriver) new ChromeDriver();
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+driver.get("https://www.phptravels.net/home");//ur l in the browser launching of the site
+driver.findElement(By.xpath("//a[contains(@class,'text-center flights')]")).click(); //click on flight
+driver.findElement(By.xpath("//label[contains(text(),'Round Trip')]")).click(); //click on round trip 
+//Thread.sleep(2000);
+WebElement source=driver.driver.findElement(By.xpath("//div[@id='select2-drop']//input[@class='select2-input']"));
+
+source.clear();
+source.sendKeys("IND");
+source.sendKeys(Keys.ENTER); //entering source point of travelling
+
+WebElement destination=driver.findElement(By.xpath("//div[@id='select2-drop']//input[@class='select2-input']"));
+destination.clear();
+destination.sendKeys("MIA");
+destination.sendKeys(Keys.ENTER); //entering destination point of travelling
+
+WebElement departure=driver.findElement(By.xpath("//input[@id='FlightsDateStart']"));
+Action a=new Action(driver);
+a.moveToElement(departure).doubleclick.build.perform();
+
+WebElement return=driver.findElement(By.xpath("//input[@id='FlightsDateEnd']"));
+Action a=new Action(driver);
+a.moveToElement(return).doubleclick.build.perform();
+
+
+driver.driver.findElement(By.xpath("//div[contains(@class,'row no-gutters mb-15 row-reverse')]//div[contains(@class,'row no-gutters')]//div[1]//div[1]//div[2]//div[1]//span[1]//button[1]").click(); //select adult
+driver.driver.findElement(By.xpath("//div[@id='flights']//div[2]//div[1]//div[2]//div[1]//span[1]//button[1]").click(); //select child
+driver.driver.findElement(By.xpath("//button[contains(text(),'Search')]").click(); //click on serach
+
+
+
+}
+
+
